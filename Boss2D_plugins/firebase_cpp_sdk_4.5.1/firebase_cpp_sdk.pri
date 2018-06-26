@@ -7,7 +7,7 @@ android: QT += androidextras
 DEFINES += BOSS_PLUGINS_FIREBASE
 INCLUDEPATH += ../../Boss2D_plugins/firebase_cpp_sdk_4.5.1/firebase_cpp_sdk/include
 
-win32-msvc*:{
+win32-msvc*{
     CONFIG(debug, debug|release){
         contains(QT_ARCH, i386){
             LIBPATH += ../../Boss2D_plugins/firebase_cpp_sdk_4.5.1/firebase_cpp_sdk/libs/windows/VS2015/MD/x86/Debug
@@ -25,7 +25,7 @@ win32-msvc*:{
     LIBS += firebase_admob.lib
 }
 
-macx:{
+macx{
     LIBPATH += ../../Boss2D_plugins/firebase_cpp_sdk_4.5.1/firebase_cpp_sdk/libs/darwin/universal
     LIBS += -lfirebase_app
     LIBS += -lfirebase_admob
@@ -35,7 +35,7 @@ macx:{
     LIBS += -framework firebase_admob
 }
 
-ios:{
+ios{
     !exists($$OUT_PWD/../common/ios/GoogleService-Info.plist) {
         message("BOSS_PLUGINS_FIREBASE : File(GoogleService-Info.plist) not found!!!")
         message("BOSS_PLUGINS_FIREBASE : Please refer to this folder -> Boss2D_plugins/firebase_cpp_sdk_4.5.1/firebase_cpp_sdk_example_common/ios")
@@ -69,7 +69,7 @@ ios:{
     LIBS += -framework GoogleMobileAds
 }
 
-android:{
+android{
     !exists($$OUT_PWD/../common/android/build.gradle) {
         message("BOSS_PLUGINS_FIREBASE : File(build.gradle) not found!!!")
         message("BOSS_PLUGINS_FIREBASE : Please refer to this folder -> Boss2D_plugins/firebase_cpp_sdk_4.5.1/firebase_cpp_sdk_example_common/android")
